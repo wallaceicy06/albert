@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  time_checkin: 2015-07-23 11:06:55
+  time_pickup: 2015-07-23 11:06:55
+  barcode: 1
+
+two:
+  time_checkin: 2015-07-23 11:06:55
+  time_pickup: 2015-07-23 11:06:55
+  barcode: 1
