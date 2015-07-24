@@ -1,0 +1,16 @@
+{{outlet}}
+
+<p>This is the mailbox for user {{controller.fullName}}</p>
+
+<table>
+  <tr>
+    <th>id</th>
+    <th>checked in</th>
+  </tr>
+{{#each model.packages as |package|}}
+  <tr>
+    <td>{{package.id}}</td>
+    <td>{{package.timeCheckin}}</td>
+  </tr>
+{{/each}}
+</table>
