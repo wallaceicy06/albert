@@ -12,7 +12,7 @@
     <td>{{package.id}}</td>
     <td>{{package.owner.firstName}}</td>
     <td>{{package.timeCheckin}}</td>
-    <td></td>
+    <td><button {{action 'pickup' package}}>Pick up</button></td>
   </tr>
 {{/each}}
 </table>

@@ -11,7 +11,9 @@ Router.map(function() {
       this.route('new');
     });
   });
-  this.route('mailbox');
+  this.route('user', function() {
+    this.route('packages');
+  });
 });
 
 export default Router;
