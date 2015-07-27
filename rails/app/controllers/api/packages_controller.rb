@@ -25,6 +25,16 @@ class Api::PackagesController < ApplicationController
     end
   end
 
+  def update
+    @package = Package.find(params[:id])
+
+    if @package.update_attributes(package_params)
+      render json: @package, status: :ok
+    else
+      render json: @package.errors, status: :unprocessable_entity
+    end
+  end
+
   private
 
     def temp_infer_attributes
@@ -33,7 +43,7 @@ class Api::PackagesController < ApplicationController
     end
 
     def package_params
-      params.require(:package).permit(:barcode, :owner_id)
+      params.require(:package).permit(:barcode, :owner_id, :picked_up)
     end
 
 end

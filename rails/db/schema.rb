@@ -15,22 +15,22 @@ ActiveRecord::Schema.define(version: 20150723180655) do
 
   create_table "packages", force: :cascade do |t|
     t.datetime "time_checkin"
-    t.datetime "time_pickup"
+    t.boolean  "picked_up",    default: false
     t.integer  "barcode"
     t.integer  "processor_id"
     t.integer  "owner_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "username"
-    t.boolean  "admin"
+    t.boolean  "admin",      default: false
     t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
 end
