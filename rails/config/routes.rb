@@ -55,7 +55,7 @@ Rails.application.routes.draw do
   #   end
 
   namespace :api do
-    resources :users
-    resources :packages
+    resources :users, only: [:show, :index]
+    resources :packages, only: [:show, :index, :create]
   end
 end
