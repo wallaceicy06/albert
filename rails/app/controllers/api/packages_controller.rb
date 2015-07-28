@@ -16,6 +16,7 @@ class Api::PackagesController < ApplicationController
   def create
     @package = Package.new(package_params)
 
+    # change this to use the current user, once that crap is implemented
     temp_infer_attributes
 
     if @package.save

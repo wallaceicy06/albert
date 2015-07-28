@@ -55,7 +55,7 @@ Rails.application.routes.draw do
   #   end
 
   namespace :api do
-    resources :users, only: [:show, :index]
+    resources :users, only: [:show, :index, :create, :update, :destroy]
     resources :packages, only: [:show, :index, :create, :update]
   end
 end
