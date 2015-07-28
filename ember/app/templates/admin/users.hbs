@@ -2,14 +2,14 @@
 
 <table>
   <tr>
-    <th>first name</th>
-    <th>last name</th>
-    <th>username</th>
-    <th>email</th>
-    <th>admin</th>
+    <th {{bind-attr class='sortedByFirstName:sortColumn'}} {{action 'sortBy' 'firstName'}}>first name</th>
+    <th {{bind-attr class='sortedByLastName:sortColumn'}} {{action 'sortBy' 'lastName'}}>last name</th>
+    <th {{bind-attr class='sortedByUsername:sortColumn'}} {{action 'sortBy' 'username'}}>username</th>
+    <th {{bind-attr class='sortedByEmail:sortColumn'}} {{action 'sortBy' 'email'}}>email</th>
+    <th {{bind-attr class='sortedByAdmin:sortColumn'}} {{action 'sortBy' 'admin'}}>admin</th>
     <th><!-- controls --></th>
   </tr>
-{{#each model as |user|}}
+{{#each sortedList as |user|}}
   <tr>
     <td>{{user.firstName}}</td>
     <td>{{user.lastName}}</td>
