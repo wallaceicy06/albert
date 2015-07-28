@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
     },
 
     sortBy: function(property) {
-      if (this.get('sortProperties')[0] === property) {
+      if (Ember.isEqual(this.get('sortProperties')[0], property)) {
         this.set('sortAscending', !this.get('sortAscending'));
       } else {
         this.set('sortProperties', [property]);
@@ -22,23 +22,23 @@ export default Ember.Controller.extend({
   sortProperties: ['lastName'],
 
   sortedByFirstName: function() {
-    return this.get('sortProperties')[0] === 'firstName';
+    return Ember.isEqual(this.get('sortProperties')[0], 'firstName');
   }.property('sortProperties'),
 
   sortedByLastName: function() {
-    return this.get('sortProperties')[0] === 'lastName';
+    return Ember.isEqual(this.get('sortProperties')[0], 'lastName');
   }.property('sortProperties'),
 
   sortedByUsername: function() {
-    return this.get('sortProperties')[0] === 'username';
+    return Ember.isEqual(this.get('sortProperties')[0], 'username');
   }.property('sortProperties'),
 
   sortedByEmail: function() {
-    return this.get('sortProperties')[0] === 'email';
+    return Ember.isEqual(this.get('sortProperties')[0], 'email');
   }.property('sortProperties'),
 
   sortedByAdmin: function() {
-    return this.get('sortProperties')[0] === 'admin';
+    return Ember.isEqual(this.get('sortProperties')[0], 'admin');
   }.property('sortProperties'),
 
   sortedList: function() {
