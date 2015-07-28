@@ -2,18 +2,19 @@
 
 <table>
   <tr>
-    <th>id</th>
+    <th>barcode</th>
     <th>owner</th>
     <th>checked in</th>
     <th><!-- controls --></th>
   </tr>
 {{#each model as |package|}}
   <tr>
-    <td>{{package.id}}</td>
+    <td>{{package.barcode}}</td>
     <td>{{package.owner.firstName}}</td>
-    <td>{{package.timeCheckin}}</td>
+    <td>{{ago package.timeCheckin}}</td>
     <td>
       {{#if package.pickedUp}}
+        <!-- Picked up -->
         Picked up
       {{else}}
         <button {{action 'pickup' package}}>Pick up</button>
