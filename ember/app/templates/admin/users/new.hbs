@@ -1,23 +1,48 @@
 <form {{action "create" on="submit"}}>
   <div class="form-group">
     <label for="firstName">First name</label>
-    {{input type="text" value=newFirstName}}
+    {{input type="text" value=model.firstName}}
+    {{#each model.errors.firstName as |error|}}
+      <span class="error">
+        {{error.message}}
+      </span>
+    {{/each}}
   </div>
   <div class="form-group">
     <label for="lastName">Last name</label>
-    {{input type="text" value=newLastName}}
+    {{input type="text" value=model.lastName}}
+    {{#each model.errors.lastName as |error|}}
+      <span class="error">
+        {{error.message}}
+      </span>
+    {{/each}}
   </div>
   <div class="form-group">
     <label for="username">Username</label>
-    {{input type="text" value=newUsername}}
+    {{input type="text" value=model.username}}
+    {{#each model.errors.username as |error|}}
+      <span class="error">
+        {{error.message}}
+      </span>
+    {{/each}}
   </div>
   <div class="form-group">
     <label for="email">Email</label>
-    {{input type="text" value=newEmail}}
+    {{input type="text" value=model.email}}
+    {{#each model.errors.email as |error|}}
+      <span class="error">
+        {{error.message}}
+      </span>
+    {{/each}}
   </div>
   <div class="form-group">
     <label for="admin">Admin</label>
-    {{input type="checkbox" name="newIsAdmin" checked=newIsAdmin}}
+    {{input type="checkbox" name="isAdmin" checked=model.admin}}
+    {{#each model.errors.admin as |error|}}
+      <span class="error">
+        {{error.message}}
+      </span>
+    {{/each}}
   </div>
 
   <button type="submit">Submit</button>

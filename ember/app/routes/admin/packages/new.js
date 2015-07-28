@@ -1,5 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  controllerName: 'admin.packages'
+  model: function() {
+    return this.store.createRecord('package');
+  }
 });

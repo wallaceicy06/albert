@@ -1,5 +1,6 @@
 <h3>New package</h3>
 
+
 <form {{action "create" on="submit"}}>
   <div class="form-group">
     <label for="name">Owner</label>
@@ -7,7 +8,20 @@
   </div>
   <div class="form-group">
     <label for="capacity">Barcode</label>
-    {{input type="text" value=newBarcode}}
+    {{input type="text" value=model.barcode}}
+    {{#each model.errors.barcode as |error|}}
+      <span class="error">
+        {{error.message}}
+      </span>
+    {{/each}}
+  </div>
+
+  <div>
+    {{#each model.errors.processor as |error|}}
+      <span class="error">
+        {{error.message}}
+      </span>
+    {{/each}}
   </div>
 
   <button type="submit">Submit</button>
