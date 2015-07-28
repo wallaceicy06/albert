@@ -23,7 +23,7 @@ class Api::PackagesController < ApplicationController
       render json: @package, status: :created
       UserMailer.new_package_email(@package.owner, @package).deliver_later
     else
-      render json: @package.errors, status: :unprocessable_entity
+      render json: {errors: @package.errors}, status: :unprocessable_entity
     end
   end
 
@@ -33,7 +33,7 @@ class Api::PackagesController < ApplicationController
     if @package.update_attributes(package_params)
       render json: @package, status: :ok
     else
-      render json: @package.errors, status: :unprocessable_entity
+      render json: {errors: @package.errors}, status: :unprocessable_entity
     end
   end
 

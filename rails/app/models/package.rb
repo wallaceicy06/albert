@@ -5,6 +5,11 @@ class Package < ActiveRecord::Base
   validates :barcode, presence: true, uniqueness: true
   validates :processor, presence: true
   validates :owner, presence: true
+  validate :processor_is_admin
   
-  # TODO: cusotm validation for admins processor
+  def processor_is_admin
+    if not processor.admin?
+      errors.add(:processor, 'You must be an admin to process packages.')
+    end
+  end
 end
