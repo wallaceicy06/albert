@@ -10,6 +10,9 @@ Router.map(function() {
     this.route('packages', function() {
       this.route('new');
     });
+    this.route('users', function() {
+      this.route('new');
+    });
   });
   this.route('user', function() {
     this.route('packages');

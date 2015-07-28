@@ -1,0 +1,22 @@
+{{outlet}}
+
+<table>
+  <tr>
+    <th>first name</th>
+    <th>last name</th>
+    <th>username</th>
+    <th>email</th>
+    <th>admin</th>
+    <th><!-- controls --></th>
+  </tr>
+{{#each model as |user|}}
+  <tr>
+    <td>{{user.firstName}}</td>
+    <td>{{user.lastName}}</td>
+    <td>{{user.username}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.admin}}</td>
+    <td><button {{action 'destroy' user}}>Delete</button></td>
+  </tr>
+{{/each}}
+</table>
