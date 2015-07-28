@@ -21,6 +21,7 @@ class Api::PackagesController < ApplicationController
 
     if @package.save
       render json: @package, status: :created
+      UserMailer.new_package_email(@package.owner, @package).deliver_later
     else
       render json: @package.errors, status: :unprocessable_entity
     end

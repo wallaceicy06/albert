@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1><%= @user.first_name %>, you have a new package.</h1>
+    <p>
+      <%= @package.processor.first_name %> checked in your package on
+      <%= @package.time_checkin %>. Please come to the mail room to pick
+      it up.
+    </p>
+    <p>Have a great day!</p>
+  </body>
+</html>
