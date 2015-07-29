@@ -37,7 +37,8 @@
     "ember-data-filter": "1.13.0",
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.2",
-    "ember-moment": "3.1.0"
+    "ember-moment": "3.1.0",
+    "uikit": "2.21.0"
   },
   "dependencies": {}
 }

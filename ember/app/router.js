@@ -6,6 +6,7 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('homepage', { path: '/' });
   this.route('admin', function() {
     this.route('packages', function() {
       this.route('new');
@@ -15,7 +16,10 @@ Router.map(function() {
     });
   });
   this.route('user', function() {
-    this.route('packages');
+    this.route('packages', function() {
+      this.route('new');
+      this.route('pickedup');
+    });
   });
 });
 

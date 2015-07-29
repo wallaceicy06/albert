@@ -1,25 +1,12 @@
-{{outlet}}
+<div class="uk-grid" data-uk-grid-margin>
+  <div class="uk-width-1-1">
+    <ul class="uk-tab" data-uk-tab>
+      <li>{{#link-to 'user.packages.index'}}All{{/link-to}}</li>
+      <li>{{#link-to 'user.packages.new'}}New{{/link-to}}</li>
+      <li>{{#link-to 'user.packages.pickedup'}}Picked up{{/link-to}}</li>
+    </ul>
+  </div>
+  {{outlet}}
+</div>
 
-<table>
-  <tr>
-    <th>barcode</th>
-    <th>owner</th>
-    <th>checked in</th>
-    <th><!-- controls --></th>
-  </tr>
-{{#each model as |package|}}
-  <tr>
-    <td>{{package.barcode}}</td>
-    <td>{{package.owner.firstName}}</td>
-    <td>{{ago package.timeCheckin}}</td>
-    <td>
-      {{#if package.pickedUp}}
-        <!-- Picked up -->
-        Picked up
-      {{else}}
-        <button {{action 'pickup' package}}>Pick up</button>
-      {{/if}}
-    </td>
-  </tr>
-{{/each}}
-</table>
+

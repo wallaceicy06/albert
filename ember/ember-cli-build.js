@@ -20,5 +20,16 @@ module.exports = function(defaults) {
   // along with the exports of each module as its value.
   app.import('bower_components/jquery/dist/jquery.js');
 
+  /* UIKit imports */
+  app.import('bower_components/uikit/css/uikit.almost-flat.css');
+  app.import('bower_components/uikit/fonts/fontawesome-webfont.woff', {
+    destDir: 'fonts'
+  });
+  app.import('bower_components/uikit/fonts/fontawesome-webfont.woff2', {
+    destDir: 'fonts'
+  });
+
+  app.import('bower_components/uikit/js/uikit.js');
+
   return app.toTree();
 };
