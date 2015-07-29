@@ -4,11 +4,13 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1><%= @user.first_name %>, you have a new package.</h1>
+    <h2><%= @user.first_name %>, you have a new package.</h2>
     <p>
-      <%= @package.processor.first_name %> checked in your package on
-      <%= @package.time_checkin %>. Please come to the mail room to pick
-      it up.
+      <%= @package.processor.first_name %> checked in your package at
+      <%= @package.time_checkin.in_time_zone.strftime("%-I:%M %p %Z") %>.
+    </p>
+    <p>
+      Please come to the mail room to pick it up.
     </p>
     <p>Have a great day!</p>
   </body>

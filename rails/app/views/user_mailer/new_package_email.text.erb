@@ -2,7 +2,7 @@
 ==============================================================================
 
 <%= @package.processor.first_name %> checked in your package on
-<%= @package.time_checkin %>. 
+<%= @package.time_checkin.in_time_zone.strftime("%-I:%M %p") %>. 
 
 Please come to the mail room to pick it up.
 
