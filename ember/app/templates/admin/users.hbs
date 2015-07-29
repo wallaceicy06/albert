@@ -1,22 +1,24 @@
 {{outlet}}
 
-<table>
-  <tr>
-    <th class={{if sortedByFirstName 'sortColumn'}} {{action 'sortBy' 'firstName'}}>first name</th>
-    <th class={{if sortedByLastName 'sortColumn'}} {{action 'sortBy' 'lastName'}}>last name</th>
-    <th class={{if sortedByUsername 'sortColumn'}} {{action 'sortBy' 'username'}}>username</th>
-    <th class={{if sortedByEmail 'sortColumn'}} {{action 'sortBy' 'email'}}>email</th>
-    <th class={{if sortedByAdmin 'sortColumn'}} {{action 'sortBy' 'admin'}}>admin</th>
-    <th><!-- controls --></th>
-  </tr>
-{{#each sortedList as |user|}}
-  <tr>
-    <td>{{user.firstName}}</td>
-    <td>{{user.lastName}}</td>
-    <td>{{user.username}}</td>
-    <td>{{user.email}}</td>
-    <td>{{user.admin}}</td>
-    <td><button {{action 'destroy' user}}>Delete</button></td>
-  </tr>
-{{/each}}
-</table>
+<div class="uk-width-1-1">
+  <table class="uk-table">
+    <tr>
+      <th class="clickable" {{action 'sortBy' 'firstName'}}>first name <i class={{sort-icon sortProperties sortAscending 'firstName'}}></i></th>
+      <th class="clickable" {{action 'sortBy' 'lastName'}}>last name <i class={{sort-icon sortProperties sortAscending 'lastName'}}></i></th>
+      <th class="clickable" {{action 'sortBy' 'username'}}>username <i class={{sort-icon sortProperties sortAscending 'username'}}></i></th>
+      <th class="clickable" {{action 'sortBy' 'email'}}>email <i class={{sort-icon sortProperties sortAscending 'email'}}></i></th>
+      <th class="clickable" {{action 'sortBy' 'admin'}}>admin <i class={{sort-icon sortProperties sortAscending 'admin'}}></i></th>
+      <th><!-- controls --></th>
+    </tr>
+  {{#each sortedList as |user|}}
+    <tr>
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.admin}}</td>
+      <td><button {{action 'destroy' user}}>Delete</button></td>
+    </tr>
+  {{/each}}
+  </table>
+</div>

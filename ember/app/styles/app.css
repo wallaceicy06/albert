@@ -2,6 +2,6 @@
   color: red;
 }
 
-.sortColumn {
-  text-decoration: underline;
+.clickable {
+  cursor: pointer;
 }
