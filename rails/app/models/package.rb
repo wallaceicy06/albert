@@ -5,7 +5,7 @@ class Package < ActiveRecord::Base
   validates :barcode, on: :create, presence: true, uniqueness: { scope: :picked_up }
   validates :processor, presence: true
   validates :owner, presence: true
-  validate :processor_is_admin
+  # validate :processor_is_admin
   
   def processor_is_admin
     if not processor.admin?

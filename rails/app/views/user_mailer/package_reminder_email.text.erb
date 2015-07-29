@@ -1,0 +1,9 @@
+<%= @user.first_name %>, you have <%= @user.new_packages.size %> <%= 'package'.pluralize(@user.new_packages.size) %> awaiting pickup.
+===============================================================================
+
+Please come to the mail room and pick <%= 'it'.pluralize(@user.new_packages.size) %> up as soon as possible.
+
+If you have already picked up the <%= 'package'.pluralize(@user.new_packages.size) %>, please log in and
+mark that you have done so.
+
+Have a great day!
