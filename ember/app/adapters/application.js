@@ -1,5 +1,8 @@
 import DS from 'ember-data';
 
 export default DS.ActiveModelAdapter.extend({
-  namespace: 'api'
+  namespace: 'api',
+  shouldBackgroundReloadRecord: function (store, snapshot) {
+    return true;
+  }
 });

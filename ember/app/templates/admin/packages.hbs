@@ -5,6 +5,7 @@
     <th>barcode</th>
     <th>owner</th>
     <th>checked in</th>
+    <th>picked up</th>
     <th><!-- controls --></th>
   </tr>
 {{#each model as |package|}}
@@ -12,6 +13,7 @@
     <td>{{package.barcode}}</td>
     <td>{{package.owner.firstName}}</td>
     <td>{{ago package.timeCheckin}}</td>
+    <td>{{package.pickedUp}}</td>
     <td></td>
   </tr>
 {{/each}}
