@@ -2,11 +2,11 @@
 
 <table>
   <tr>
-    <th {{bind-attr class='sortedByFirstName:sortColumn'}} {{action 'sortBy' 'firstName'}}>first name</th>
-    <th {{bind-attr class='sortedByLastName:sortColumn'}} {{action 'sortBy' 'lastName'}}>last name</th>
-    <th {{bind-attr class='sortedByUsername:sortColumn'}} {{action 'sortBy' 'username'}}>username</th>
-    <th {{bind-attr class='sortedByEmail:sortColumn'}} {{action 'sortBy' 'email'}}>email</th>
-    <th {{bind-attr class='sortedByAdmin:sortColumn'}} {{action 'sortBy' 'admin'}}>admin</th>
+    <th class={{if sortedByFirstName 'sortColumn'}} {{action 'sortBy' 'firstName'}}>first name</th>
+    <th class={{if sortedByLastName 'sortColumn'}} {{action 'sortBy' 'lastName'}}>last name</th>
+    <th class={{if sortedByUsername 'sortColumn'}} {{action 'sortBy' 'username'}}>username</th>
+    <th class={{if sortedByEmail 'sortColumn'}} {{action 'sortBy' 'email'}}>email</th>
+    <th class={{if sortedByAdmin 'sortColumn'}} {{action 'sortBy' 'admin'}}>admin</th>
     <th><!-- controls --></th>
   </tr>
 {{#each sortedList as |user|}}
