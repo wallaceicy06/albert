@@ -18,8 +18,8 @@ Router.map(function() {
   });
   this.route('user', function() {
     this.route('packages', function() {
-      this.route('new');
       this.route('pickedup');
+      this.route('all');
     });
   });
 });

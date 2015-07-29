@@ -17,10 +17,9 @@
             <td>{{ago package.timeCheckin}}</td>
             <td>
               {{#if package.pickedUp}}
-                <!-- Picked up -->
-                Picked up
+                <i class="uk-icon-check-circle"></i>
               {{else}}
-                <button class="uk-button uk-button-mini uk-button-success" {{action 'pickup' package}}>Pick up</button>
+                <button class="uk-button uk-button-mini uk-button-primary" {{action 'pickup' package}}><i class="uk-icon-check"></i></button>
               {{/if}}
             </td>
           </tr>
