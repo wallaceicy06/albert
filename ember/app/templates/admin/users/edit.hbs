@@ -1,6 +1,6 @@
-<form class="uk-form" {{action "create" on="submit"}}>
+<form class="uk-form" {{action "update" on="submit"}}>
   <div class="uk-form-row">
-    <legend>New user</legend>
+    <legend>Edit user</legend>
     <fieldset data-uk-margin>
       {{autofocus-text-field type="text" value=model.firstName placeholder="first name"}}
       {{input type="text" value=model.lastName placeholder="last name"}}

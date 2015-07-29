@@ -1,24 +1,36 @@
-{{outlet}}
-
 <div class="uk-width-1-1">
-  <table class="uk-table">
-    <tr>
-      <th class="clickable" {{action 'sortBy' 'firstName'}}>first name <i class={{sort-icon sortProperties sortAscending 'firstName'}}></i></th>
-      <th class="clickable" {{action 'sortBy' 'lastName'}}>last name <i class={{sort-icon sortProperties sortAscending 'lastName'}}></i></th>
-      <th class="clickable" {{action 'sortBy' 'username'}}>username <i class={{sort-icon sortProperties sortAscending 'username'}}></i></th>
-      <th class="clickable" {{action 'sortBy' 'email'}}>email <i class={{sort-icon sortProperties sortAscending 'email'}}></i></th>
-      <th class="clickable" {{action 'sortBy' 'admin'}}>admin <i class={{sort-icon sortProperties sortAscending 'admin'}}></i></th>
-      <th><!-- controls --></th>
-    </tr>
-  {{#each sortedList as |user|}}
-    <tr>
-      <td>{{user.firstName}}</td>
-      <td>{{user.lastName}}</td>
-      <td>{{user.username}}</td>
-      <td>{{user.email}}</td>
-      <td>{{user.admin}}</td>
-      <td><button {{action 'destroy' user}}>Delete</button></td>
-    </tr>
-  {{/each}}
-  </table>
+  <h1>User Management</h1>
+  <p>Manage the users that have access to Albert</p>
+
+  {{outlet}}
+
+  <div>
+    <table class="uk-table uk-table-striped uk-table-hover">
+      <thead>
+        <tr>
+          <th class="clickable" {{action 'sortBy' 'firstName'}}>first name <i class={{sort-icon sortProperties sortAscending 'firstName'}}></i></th>
+          <th class="clickable" {{action 'sortBy' 'lastName'}}>last name <i class={{sort-icon sortProperties sortAscending 'lastName'}}></i></th>
+          <th class="clickable" {{action 'sortBy' 'username'}}>username <i class={{sort-icon sortProperties sortAscending 'username'}}></i></th>
+          <th class="clickable" {{action 'sortBy' 'email'}}>email <i class={{sort-icon sortProperties sortAscending 'email'}}></i></th>
+          <th class="clickable" {{action 'sortBy' 'admin'}}>admin <i class={{sort-icon sortProperties sortAscending 'admin'}}></i></th>
+          <th><!-- controls --></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each sortedList as |user|}}
+          <tr>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+            <td>{{#if user.admin}}<i class="uk-icon-check"></i>{{else}}{{/if}}</td>
+            <td>
+              {{#link-to 'admin.users.edit' user class="uk-button uk-button-mini row-controls"}}<i class="uk-icon-edit"></i>{{/link-to}}
+              <button class="uk-button uk-button-mini uk-button-danger row-controls" {{action 'destroy' user}}><i class="uk-icon-trash"></i></button>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
 </div>

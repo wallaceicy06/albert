@@ -5,3 +5,11 @@
 .clickable {
   cursor: pointer;
 }
+
+.row-controls {
+  opacity: .2;
+}
+
+.row-controls:hover {
+  opacity: 1;
+}

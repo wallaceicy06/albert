@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
       var that = this;
 
       this.get('model').save().then(function() {
-        that.set('model', that.store.createRecord('user'));
+        that.transitionToRoute('admin.users.index');
       }, function() {
         console.log('user save unsuccessful');
       });

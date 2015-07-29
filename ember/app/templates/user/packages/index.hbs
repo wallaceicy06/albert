@@ -1,27 +1,31 @@
 <div class="uk-width-1-1">
   {{#if sortedList}}
-    <table class="uk-table">
-      <tr>
-        <th>barcode</th>
-        <th>owner</th>
-        <th>checked in</th>
-        <th><!-- controls --></th>
-      </tr>
-    {{#each sortedList as |package|}}
-      <tr>
-        <td>{{package.barcode}}</td>
-        <td>{{package.owner.firstName}}</td>
-        <td>{{ago package.timeCheckin}}</td>
-        <td>
-          {{#if package.pickedUp}}
-            <!-- Picked up -->
-            Picked up
-          {{else}}
-            <button class="uk-button uk-button-mini uk-button-success" {{action 'pickup' package}}>Pick up</button>
-          {{/if}}
-        </td>
-      </tr>
-    {{/each}}
+    <table class="uk-table uk-table-striped">
+      <thead>
+        <tr>
+          <th>barcode</th>
+          <th>owner</th>
+          <th>checked in</th>
+          <th><!-- controls --></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each sortedList as |package|}}
+          <tr>
+            <td>{{package.barcode}}</td>
+            <td>{{package.owner.firstName}}</td>
+            <td>{{ago package.timeCheckin}}</td>
+            <td>
+              {{#if package.pickedUp}}
+                <!-- Picked up -->
+                Picked up
+              {{else}}
+                <button class="uk-button uk-button-mini uk-button-success" {{action 'pickup' package}}>Pick up</button>
+              {{/if}}
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
     </table>
   {{else}}
     <p>There are no packages to display.</p>

@@ -1,12 +1,15 @@
-<div class="uk-grid" data-uk-grid-margin>
-  <div class="uk-width-1-1">
+<div class="uk-width-1-1">
+  <h1>My packages</h1>
+  <p>This is a listing of all packages belonging to you.</p>
+
+  <div>
     <ul class="uk-tab" data-uk-tab>
       <li>{{#link-to 'user.packages.index'}}All{{/link-to}}</li>
       <li>{{#link-to 'user.packages.new'}}New{{/link-to}}</li>
       <li>{{#link-to 'user.packages.pickedup'}}Picked up{{/link-to}}</li>
     </ul>
+    {{outlet}}
   </div>
-  {{outlet}}
 </div>
 
 
