@@ -29,7 +29,13 @@ module.exports = function(defaults) {
     destDir: 'fonts'
   });
 
+  app.import('bower_components/uikit/css/components/autocomplete.almost-flat.css');
   app.import('bower_components/uikit/js/uikit.js');
+  app.import('bower_components/uikit/js/components/autocomplete.js');
+
+  app.import('bower_components/uikit/css/components/sticky.almost-flat.css');
+  app.import('bower_components/uikit/js/components/sticky.js');
+
 
   return app.toTree();
 };

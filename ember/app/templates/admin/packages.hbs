@@ -1,20 +1,34 @@
-{{outlet}}
+<div class="uk-width-1-1">
+  <h1>Package management</h1>
+  <p>Check in packages to notify their owners.</p>
 
-<table>
-  <tr>
-    <th>barcode</th>
-    <th>owner</th>
-    <th>checked in</th>
-    <th>picked up</th>
-    <th><!-- controls --></th>
-  </tr>
-{{#each model as |package|}}
-  <tr>
-    <td>{{package.barcode}}</td>
-    <td>{{package.owner.firstName}}</td>
-    <td>{{ago package.timeCheckin}}</td>
-    <td>{{package.pickedUp}}</td>
-    <td></td>
-  </tr>
-{{/each}}
-</table>
+  {{outlet}}
+  <div>
+    <table class="uk-table uk-table-striped uk-table-hover">
+      <thead>
+        <tr>
+          <th>barcode</th>
+          <th>owner</th>
+          <th>checked in</th>
+          <th>picked up</th>
+          <th><!-- controls --></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each sortedList as |package|}}
+          <tr>
+            <td>{{package.barcode}}</td>
+            <td>{{package.owner.firstName}}</td>
+            <td>{{ago package.timeCheckin}}</td>
+            <td>
+              {{#if package.pickedUp}}
+                <i class="uk-icon-check-circle"></i>
+              {{/if}}
+            </td>
+            <td></td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>

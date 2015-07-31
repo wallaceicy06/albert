@@ -1,5 +1,4 @@
 <div class="uk-width-1-1">
-  {{#if sortedList}}
     <table class="uk-table uk-table-striped">
       <thead>
         <tr>
@@ -26,6 +25,7 @@
         {{/each}}
       </tbody>
     </table>
+  {{#if sortedList}}
   {{else}}
     <p>There are no packages to display.</p>
   {{/if}}

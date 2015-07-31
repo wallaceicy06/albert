@@ -1,31 +1,17 @@
-<h3>New package</h3>
-
-
-<form {{action "create" on="submit"}}>
-  <div class="form-group">
-    <label for="name">Owner</label>
-    {{input type="text" value=newOwner}}
-  </div>
-  <div class="form-group">
-    <label for="capacity">Barcode</label>
-    {{input type="text" value=model.barcode}}
-    {{#each model.errors.barcode as |error|}}
-      <span class="error">
-        {{error.message}}
-      </span>
-    {{/each}}
-  </div>
-
-  <div>
-    {{#each model.errors.processor as |error|}}
-      <span class="error">
-        {{error.message}}
-      </span>
-    {{/each}}
-  </div>
-
-  <button type="submit">Submit</button>
-  {{#link-to 'admin.packages.index'}}Close{{/link-to}}
+<form class="uk-form" {{action "create" on="submit"}}>
+  <fieldset data-uk-margin>
+    <legend>New package</legend>
+    <div class="uk-form-row">
+      {{autofocus-text-field type="text" value=model.barcode placeholder="barcode"}}
+    </div>
+    <div class="uk-form-row">
+      {{uikit-autocomplete textEntered=(action 'search') value=newOwnerId placeholder="owner username"}}
+    </div>
+    <div class="uk-form-row">
+      <button class="uk-button uk-button-primary" type="submit">Submit</button>
+      {{#link-to 'admin.packages.index' class="uk-button"}}Close{{/link-to}}
+    </div>
+  </fieldset>
 </form>
 
 
